@@ -24,47 +24,47 @@ public class ZooEmployee extends ZooKeeper
 				case FEED: // switch statement here based on type of animal?
 					System.out.println("Zookeeper feeds " + a.getName());
 					if(a instanceof Cat) {
-						Cat x = new Cat(a.getName());
+						Cat x = (Cat) a;
 						x.eat();
 					}
 					else if(a instanceof Dog) {
-						Dog x = new Dog(a.getName());
+						Dog x = (Dog) a;
 						x.eat();
 					}
 					else if(a instanceof Elephant) {
-						Elephant x = new Elephant(a.getName());
+						Elephant x = (Elephant) a;
 						x.eat();
 					}
 					else if(a instanceof Hippo) {
-						Hippo x = new Hippo(a.getName());
+						Hippo x = (Hippo) a;
 						x.eat();
 					}
 					else if(a instanceof Lion) {
-						Lion x = new Lion(a.getName());
+						Lion x = (Lion) a;
 						x.eat();
 					}
 					else if(a instanceof Lynx) {
-						Lynx x = new Lynx(a.getName());
+						Lynx x = (Lynx) a;
 						x.eat();
 					}
 					else if(a instanceof Ray) {
-						Ray x = new Ray(a.getName());
+						Ray x = (Ray) a;
 						x.eat();
 					}
 					else if(a instanceof Rhino) {
-						Rhino x = new Rhino(a.getName());
+						Rhino x = (Rhino) a;
 						x.eat();
 					}
 					else if(a instanceof Shark) {
-						Shark x = new Shark(a.getName());
+						Shark x = (Shark) a;
 						x.eat();
 					}
 					else if(a instanceof Tiger) {
-						Tiger x = new Tiger(a.getName());
+						Tiger x = (Tiger) a;
 						x.eat();
 					}
 					else if(a instanceof Wolf) {
-						Wolf x = new Wolf(a.getName());
+						Wolf x = (Wolf) a;
 						x.eat();
 					}
 					break;

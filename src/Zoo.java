@@ -11,7 +11,6 @@ public class Zoo
 		//A cat is created and instantiated with a EatStrategy to lap milk
 		zoo.add(new Cat("Cindy", new DrinksMilk()));
 		zoo.add(new Cat("Carl"));
-		
 		zoo.add(new Dog("Devon"));
 		zoo.add(new Dog("Dandy"));
 		
@@ -48,7 +47,7 @@ public class Zoo
 		//main runtime
 		Scanner input = new Scanner(System.in);
 		System.out.println("How many days should the zoo run for?");
-		int days = input.nextInt();
+		int days = input.nextInt(); 
 		int d = 1;
 		
 		while (days > 0)
