@@ -1,3 +1,5 @@
+package ZooAnimals;
+
 public class DrinksMilk implements EatStrategy
 {
 	@Override
