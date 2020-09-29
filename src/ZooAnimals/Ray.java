@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Ray extends Chondrichthyes
+public class Ray extends Chondrichthyes implements EatStrategy
 {
     public Ray(String name)
     {

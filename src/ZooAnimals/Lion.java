@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Lion extends Feline
+public class Lion extends Feline implements EatStrategy
 {
 	public Lion(String name) 
 	{
@@ -12,7 +12,7 @@ public class Lion extends Feline
 		System.out.println(getName() + "heaves a mighty roar!");
 	}
 	public void eat()
-    	{
-    		System.out.println(getName() + " eats some antelopes.");
+    {
+    	System.out.println(getName() + " eats some antelopes.");
 	}
 }

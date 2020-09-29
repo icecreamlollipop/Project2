@@ -7,6 +7,6 @@ public class Canine extends Animal
 		super(name);
 	}
 	public void roam(){
-        	System.out.println(getName() + " roams in the hills.");
-    	}
+        System.out.println(getName() + " roams in the hills.");
+    }
 }

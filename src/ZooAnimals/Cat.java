@@ -1,12 +1,12 @@
 package ZooAnimals;
 
-public class Cat extends Feline
+
+public class Cat extends Feline implements EatStrategy
 {
 	public Cat(String name) 
 	{
 		super(name + " the Cat");
 	}
-	// this is an example of polymorphism
 	public void eat()
     {
     	System.out.println(getName() + " eats some rabbits.");

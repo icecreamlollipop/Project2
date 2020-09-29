@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Hippo extends Pachyderm
+public class Hippo extends Pachyderm implements EatStrategy
 {
     public Hippo(String name)
     {

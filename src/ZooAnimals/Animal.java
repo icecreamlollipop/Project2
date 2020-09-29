@@ -1,9 +1,7 @@
 package ZooAnimals;
 
-// this is an abstract class
-public class Animal 
+public class Animal
 {
-	// this is an example of encapsulation, as well as identity (an animal's name distinguishes it from all other animals)
 	private String name;
 
 	public Animal(String name)
@@ -32,8 +30,5 @@ public class Animal
 	{
 		System.out.println(name + " roams.");
 	}
-	public void eat() 
-	{
-		System.out.println(name + " eats.");
-	}
+	
 }

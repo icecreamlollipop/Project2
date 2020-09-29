@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Shark extends Chondrichthyes
+public class Shark extends Chondrichthyes implements EatStrategy
 {
     public Shark(String name)
     {

@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Feline extends Animal
+public class Feline extends Animal 
 {
 	public Feline(String name)
 	{
