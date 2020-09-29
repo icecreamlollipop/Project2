@@ -9,7 +9,7 @@ public class Zoo
 		//create zoo
 		ArrayList<Animal> zoo = new ArrayList<Animal>(); 
 		//A cat is created and instantiated with a EatStrategy to lap milk
-		zoo.add(new Cat("Cindy", EatStrategy.lapMilk()));
+		zoo.add(new Cat("Cindy", new DrinksMilk));
 		zoo.add(new Cat("Carl"));
 		
 		zoo.add(new Dog("Devon"));
