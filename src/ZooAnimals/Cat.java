@@ -3,9 +3,9 @@ package ZooAnimals;
 
 public class Cat extends Feline implements EatStrategy
 {
-	private EatStrategy strategy;
+	private String strategy;
 	
-	public Cat(String name, EatStrategy strategy)
+	public Cat(String name, String strategy)
 	{
 		this.name = name;
 		this.strategy = strategy;
@@ -16,6 +16,6 @@ public class Cat extends Feline implements EatStrategy
 	}
 	public void eat()
     {
-    	System.out.println(getName() + " " + this.strategy.getEatStrategy());
+    	System.out.println(getName() + " " + this.strategy);
 	}
 }
