@@ -10,36 +10,36 @@ public class Zoo
 		ArrayList<Animal> zoo = new ArrayList<Animal>(); 
 		//A cat is created and instantiated with a EatStrategy to lap milk
 		zoo.add(new Cat("Cindy", new DrinksMilk()));
-		zoo.add(new Cat("Carl"));
-		zoo.add(new Dog("Devon"));
-		zoo.add(new Dog("Dandy"));
+		zoo.add(new Cat("Carl", new DrinksMilk()));
+		zoo.add(new Dog("Devon", new EatsBones()));
+		zoo.add(new Dog("Dandy", new EatsBones()));
 		
-		zoo.add(new Elephant("Ellie"));
-		zoo.add(new Cat("Elizabeth"));
+		zoo.add(new Elephant("Ellie", new EatsRoots()));
+		zoo.add(new Elephant("Elizabeth", new EatsRoots()));
 		
-		zoo.add(new Hippo("Hippocrates"));
-		zoo.add(new Hippo("Hanna"));
+		zoo.add(new Hippo("Hippocrates", new EatsGrass()));
+		zoo.add(new Hippo("Hanna", new EatsGrass()));
 		
-		zoo.add(new Lion("Leo"));
-		zoo.add(new Lion("Liam"));
+		zoo.add(new Lion("Leo", new EatsAntelopes()));
+		zoo.add(new Lion("Liam", new EatsAntelopes()));
 		
-		zoo.add(new Lynx("Lizzie"));
-		zoo.add(new Lynx("Lissandra"));
+		zoo.add(new Lynx("Lizzie", new EatsMice()));
+		zoo.add(new Lynx("Lissandra", new EatsMice()));
 		
-		zoo.add(new Ray("Rae"));
-		zoo.add(new Ray("Randy"));
+		zoo.add(new Ray("Rae", new EatsKrill()));
+		zoo.add(new Ray("Randy", new EatsKrill()));
 		
-		zoo.add(new Rhino("Rudolph"));
-		zoo.add(new Rhino("Rebecca"));
+		zoo.add(new Rhino("Rudolph", new EatsFruit()));
+		zoo.add(new Rhino("Rebecca", new EatsFruit()));
 		
-		zoo.add(new Shark("Sally"));
-		zoo.add(new Shark("Shrek"));
+		zoo.add(new Shark("Sally", new EatsTurtles()));
+		zoo.add(new Shark("Shrek", new EatsTurtles()));
 		
-		zoo.add(new Tiger("Tony"));
-		zoo.add(new Tiger("Timmy"));
+		zoo.add(new Tiger("Tony", new EatsDeer()));
+		zoo.add(new Tiger("Timmy", new EatsDeer()));
 		
-		zoo.add(new Wolf("Worwick"));
-		zoo.add(new Wolf("Wally"));
+		zoo.add(new Wolf("Worwick", new EatsSheep()));
+		zoo.add(new Wolf("Wally", new EatsSheep()));
 		
 		//create zookeeper
 		ZooEmployee zoolad = new ZooEmployee(zoo);

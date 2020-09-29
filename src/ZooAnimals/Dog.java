@@ -2,6 +2,14 @@ package ZooAnimals;
 
 public class Dog extends Canine
 {
+	private EatStrategy strategy;
+	
+	public Dog(String name, EatStrategy strategy)
+	{
+		super(name + " the Dog");
+		this.strategy = strategy;
+	}
+	
 	public Dog(String name)
 	{
 		super(name + " the Dog");
@@ -17,8 +25,8 @@ public class Dog extends Canine
 		System.out.println(super.getName() + " digs a huge hole in the earth.");
 	}
 	public void eat()
-    	{
-    		System.out.println(getName() + " eats some bones.");
+    {
+		System.out.print(getName() + " " + strategy.eat());
 	}
 	public void roam()
 	{
