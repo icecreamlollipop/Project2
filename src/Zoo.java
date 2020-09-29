@@ -7,8 +7,9 @@ public class Zoo
 	public static void main(String[] args) 
 	{
 		//create zoo
-		ArrayList<Animal> zoo = new ArrayList<Animal>();
-		zoo.add(new Cat("Cindy"));
+		ArrayList<Animal> zoo = new ArrayList<Animal>(); 
+		//A cat is created and instantiated with a EatStrategy to lap milk
+		zoo.add(new Cat("Cindy", EatStrategy.lapMilk()));
 		zoo.add(new Cat("Carl"));
 		
 		zoo.add(new Dog("Devon"));
