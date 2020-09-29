@@ -1,13 +1,31 @@
-import java.util.ArrayList;
 import ZooAnimals.*;
-import java.lang.Math.*;
+import java.util.ArrayList;
+
 
 public class ZooEmployee extends ZooKeeper
 {	
 	
+	private String currTask;
 	private ArrayList<ZooAnimals.Animal> zoo;
+	private ZooAnnouncer announcer;
 	
 	public static enum AnimalAction {AWAKEN, ROLLCALL, FEED, EXERCISE, TUCKIN};
+	ZooEmployee()
+	{
+	}
+	
+	ZooEmployee(ArrayList zoo)
+	{
+		this.zoo = zoo;
+		announcer = new ZooAnnouncer();
+	}
+	
+	public void setTask(String newTask) 
+	{
+		currTask = newTask;
+		announcer.announce(currTask);
+		
+    }
 	
 	void doForEveryAnimal(AnimalAction aa) {
 		for (ZooAnimals.Animal a : zoo)
@@ -79,21 +97,18 @@ public class ZooEmployee extends ZooKeeper
 			}
 		}
 	}
-	
-	ZooEmployee(ArrayList zoo)
-	{
-		this.zoo = zoo;
-	}
 
 	@Override
 	void awakenAnimals() 
 	{
+		setTask("awaken");
 		doForEveryAnimal(AnimalAction.AWAKEN);
 	}
 
 	@Override
 	void rollCall() 
 	{
+		setTask("rollcall");
 		System.out.println("Zookeeper takes roll");
 		doForEveryAnimal(AnimalAction.ROLLCALL);
 	}
@@ -101,18 +116,21 @@ public class ZooEmployee extends ZooKeeper
 	@Override
 	void feeding() 
 	{
+		setTask("feed");
 		doForEveryAnimal(AnimalAction.FEED);
 	}
 
 	@Override
 	void exerciseAnimals() 
 	{
+		setTask("exercise");
 		doForEveryAnimal(AnimalAction.EXERCISE);
 	}
 
 	@Override
 	void tuckIn() 
 	{
+		setTask("tuckin");
 		doForEveryAnimal(AnimalAction.TUCKIN);
 	}
 
