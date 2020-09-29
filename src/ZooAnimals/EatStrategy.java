@@ -2,27 +2,27 @@ package ZooAnimals;
 public interface EatStrategy{
 	private String strat;
 	
-	String getStrategy()
+	static String getStrategy()
 	{
 		return strat;
 	}
 	
-	static EatStrategy lapMilk()
+	static String lapMilk()
 	{
 		strat = "laps up a bowl of milk.";
-		return this;
+		return strat;
 	}
 	
-	static EatStrategy eatFlesh()
+	static String eatFlesh()
 	{
 		strat = "tears meat into pieces.";
-		return this;
+		return strat;
 	}
 	
-	static EatStrategy eatWorms()
+	static String eatWorms()
 	{
 		strat = "fills itself on worms.";
-		return this;
+		return strat;
 	}
 
 }
