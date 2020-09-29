@@ -17,6 +17,7 @@ public class Cat extends Feline
 	
 	public void eat()
     {
-    	System.out.println(getName() + " " + this.strategy.eat());
+    	System.out.print(getName() + " ");
+		strategy.eat();
 	}
 }

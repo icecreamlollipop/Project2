@@ -3,8 +3,8 @@ package ZooAnimals;
 public class DrinksMilk implements EatStrategy
 {
 	@Override
-	public String eat()
+	public void eat()
 	{
-		return "laps up a bowl of milk.";
+		System.out.println("laps up a bowl of milk.");
 	}
 }
