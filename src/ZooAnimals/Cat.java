@@ -1,11 +1,11 @@
 package ZooAnimals;
 
 
-public class Cat extends Feline implements EatStrategy
+public class Cat extends Feline
 {
-	private String strategy;
+	private EatStrategy strategy;
 	
-	public Cat(String name, String strategy)
+	public Cat(String name, EatStrategy strategy)
 	{
 		this.name = name;
 		this.strategy = strategy;
@@ -14,8 +14,10 @@ public class Cat extends Feline implements EatStrategy
 	{
 		super(name + " the Cat");
 	}
+	
+	@Override
 	public void eat()
     {
-    	System.out.println(getName() + " " + this.strategy);
+    	System.out.println(getName() + " " + this.strategy,eat());
 	}
 }
