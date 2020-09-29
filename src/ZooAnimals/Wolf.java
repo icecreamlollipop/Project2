@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Wolf extends Canine implements EatStrategy
+public class Wolf extends Canine
 {
 	public Wolf(String name) 
 	{ 

@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Lion extends Feline implements EatStrategy
+public class Lion extends Feline
 {
 	public Lion(String name) 
 	{

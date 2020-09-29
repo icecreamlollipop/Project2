@@ -1,6 +1,6 @@
 package ZooAnimals;
 
-public class Lynx extends Feline implements EatStrategy
+public class Lynx extends Feline
 {
 	public Lynx(String name) 
 	{
