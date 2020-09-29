@@ -7,7 +7,7 @@ public class Cat extends Feline
 	
 	public Cat(String name, EatStrategy strategy)
 	{
-		this.name = name;
+		super(name = "the Cat");
 		this.strategy = strategy;
 	}
 	public Cat(String name) 
@@ -15,9 +15,8 @@ public class Cat extends Feline
 		super(name + " the Cat");
 	}
 	
-	@Override
 	public void eat()
     {
-    	System.out.println(getName() + " " + this.strategy,eat());
+    	System.out.println(getName() + " " + this.strategy.eat());
 	}
 }
