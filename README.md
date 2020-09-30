@@ -15,6 +15,6 @@
 - Issues include remembering and learning aspects of Java
 
 **Sources**
--Course Material
 
+-Course Material
 -[https://www.baeldung.com/java-observer-pattern] [Baeldung Observer Pattern]
