@@ -3,49 +3,45 @@ import java.util.*;
 
 public class ZooAnnouncer extends ZooEmployee implements PropertyChangeListener
 {
-	ZooEmployee observed;
-	public ZooAnnouncer(ArrayList<ZooAnimals.Animal> zoo) 
-	{
-		super(zoo);
+	private ArrayList<ZooEmployee> observed = new ArrayList<ZooEmployee>();
+	
+	public void addObserved(ZooEmployee o) {
+		observed.add(o);
 	}
 
-	public void arrive(int d, ZooEmployee observed) {
-		System.out.println("Announcer arrived on day "+d+".");
-		this.observed = observed;
-		observed.addPropertyChangeListener(this);
+	@Override
+	public void arrive(int d) {
+		super.arrive(d);
+		for (ZooEmployee o : observed) {
+			o.addPropertyChangeListener(this);
+		}
 	}
-	
+	private boolean isTaskFor(PropertyChangeEvent evt, ZooEmployee emp) {
+		return evt.getPropertyName().equals(emp.employeeType()+".task");
+	}
+	private void announce(PropertyChangeEvent evt) {
+		String employee = evt.getPropertyName().substring(0,evt.getPropertyName().length()-5);
+		String newVal = (String)(evt.getNewValue());
+		System.out.println(" >>>> Announcer says: "+employee+" is about to "+newVal+"! <<<<<");
+	}
 	@Override public void propertyChange(PropertyChangeEvent evt)
 	{
-		String event = (String)evt.getNewValue();
-		switch (event)
-		{
-		case "awaken":
-			System.out.println("Announcer says: The Zookeeper is about to wake the animals!");
-			break;
-		case "rollcall":
-			System.out.println("Announcer says: The Zookeeper is about to take roll!");
-			break;
-		case "feed":
-			System.out.println("Announcer says: The Zookeeper is about to feed the animals!");
-			break;
-		case "exercise":
-			System.out.println("Announcer says: The Zookeeper is about to exercise the animals!");
-			break;
-		case "tuckin":
-			System.out.println("Announcer says: The Zookeeper is about to tuck the animals in!");
-			break;
-		case "leave":
-			System.out.println("Announcer says: The Zookeeper left!");
-			leave();
-			break;
+		String newVal = (String)(evt.getNewValue());
+		if (newVal=="arrive");
+		if (newVal=="leave") {
+			for (ZooEmployee o : observed) {
+				if (isTaskFor(evt,o)) {
+					o.removePropertyChangeListener(this);
+				}
+			}
 		}
-		
+		else {
+			announce(evt);
+		}
 	}
-	
+
 	@Override
-	public void leave() {
-		System.out.println("Announcer left for the day.");
-		observed.removePropertyChangeListener(this);
+	public String employeeType() {
+		return "Announcer";
 	}
 }

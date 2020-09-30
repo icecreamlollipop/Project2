@@ -41,30 +41,51 @@ public class Zoo
 		zoo.add(new Wolf("Worwick"));
 		zoo.add(new Wolf("Wally"));
 		
-		//create zookeeper
-		ZooEmployee zoolad = new ZooEmployee(zoo);
-		ZooAnnouncer announcer = new ZooAnnouncer(zoo);
+		//create zoo employees
+		Zookeeper zoolad = new Zookeeper(zoo);
+		ZooFoodServer foodslave = new ZooFoodServer();
+		ZooAnnouncer announcer = new ZooAnnouncer();
+		announcer.addObserved(zoolad);
+		announcer.addObserved(foodslave);
 		
-		
+		ArrayList<ZooEmployee> employees = new ArrayList<ZooEmployee>();
+		employees.add(zoolad);
+		employees.add(foodslave);
+		employees.add(announcer);
 		
 		//main runtime
 		Scanner input = new Scanner(System.in);
 		System.out.println("How many days should the zoo run for?");
 		int days = input.nextInt(); 
 		int d = 1;
-		
+		ZooClock clock = new ZooClock();
 		while (days > 0)
 		{
+			
+			System.out.println("============================================================");
+			clock.startDay();
+			do {
+				int hour = clock.getHour();
+				for (ZooEmployee e : employees) {
+					e.doTaskAtTime(hour, d);
+				}
+			} while (clock.nextHour());
+			/*
 			zoolad.arrive(d);
-			announcer.arrive(d,zoolad);
+			announcer.arrive(d);
 			zoolad.awakenAnimals();
 			zoolad.rollCall();
 			zoolad.feeding();
 			zoolad.exerciseAnimals();
 			zoolad.tuckIn();
+			zoolad.leave();
+			announcer.leave();
+			*/
+			System.out.println();
 			d++;
 			days--;
-			zoolad.leave();
+
 		}
+		input.close();
 	}
 }
