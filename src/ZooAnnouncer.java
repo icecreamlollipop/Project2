@@ -1,6 +1,7 @@
 import java.beans.*;
 import java.util.*;
 
+// observer pattern implementation (this is the observer, ZooEmployee is being observed)
 public class ZooAnnouncer extends ZooEmployee implements PropertyChangeListener
 {
 	private ArrayList<ZooEmployee> observed = new ArrayList<ZooEmployee>();

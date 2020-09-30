@@ -70,17 +70,7 @@ public class Zoo
 					e.doTaskAtTime(hour, d);
 				}
 			} while (clock.nextHour());
-			/*
-			zoolad.arrive(d);
-			announcer.arrive(d);
-			zoolad.awakenAnimals();
-			zoolad.rollCall();
-			zoolad.feeding();
-			zoolad.exerciseAnimals();
-			zoolad.tuckIn();
-			zoolad.leave();
-			announcer.leave();
-			*/
+
 			System.out.println();
 			d++;
 			days--;
