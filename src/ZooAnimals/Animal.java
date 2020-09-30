@@ -1,8 +1,9 @@
 package ZooAnimals;
 
-public class Animal
+public abstract class Animal
 {
 	private String name;
+	protected EatStrategy strategy = null;
 
 	public Animal(String name)
 	{
@@ -29,6 +30,10 @@ public class Animal
 	public void roam()
 	{
 		System.out.println(name + " roams.");
+	}
+    public void eat()
+    {
+		System.out.print(name + " " + strategy.eat());
 	}
 	
 }

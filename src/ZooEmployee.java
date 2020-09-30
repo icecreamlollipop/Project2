@@ -1,30 +1,36 @@
 import ZooAnimals.*;
 import java.util.ArrayList;
+import java.beans.*;
 
 
 public class ZooEmployee extends ZooKeeper
 {	
 	
 	private String currTask;
-	private ArrayList<ZooAnimals.Animal> zoo;
-	private ZooAnnouncer announcer;
+	protected ArrayList<ZooAnimals.Animal> zoo;
+	//private ZooAnnouncer announcer;
+	private PropertyChangeSupport support;
 	
 	public static enum AnimalAction {AWAKEN, ROLLCALL, FEED, EXERCISE, TUCKIN};
-	ZooEmployee()
-	{
+	
+	public void removePropertyChangeListener(PropertyChangeListener listener) {
+		support.removePropertyChangeListener(listener);
 	}
 	
-	ZooEmployee(ArrayList zoo)
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+	
+	public ZooEmployee(ArrayList<ZooAnimals.Animal> zoo)
 	{
 		this.zoo = zoo;
-		announcer = new ZooAnnouncer();
+		support = new PropertyChangeSupport(this);
 	}
 	
 	public void setTask(String newTask) 
 	{
+		support.firePropertyChange("currTask", currTask, newTask);
 		currTask = newTask;
-		announcer.announce(currTask);
-		
     }
 	
 	void doForEveryAnimal(AnimalAction aa) {
@@ -38,53 +44,9 @@ public class ZooEmployee extends ZooKeeper
 				case ROLLCALL:
 					a.makeNoise();
 					break;
-				// strategy pattern?
-				case FEED: // switch statement here based on type of animal?
+				case FEED:
 					System.out.println("Zookeeper feeds " + a.getName());
-					if(a instanceof Cat) {
-						Cat x = (Cat) a;
-						x.eat();
-					}
-					else if(a instanceof Dog) {
-						Dog x = (Dog) a;
-						x.eat();
-					}
-					else if(a instanceof Elephant) {
-						Elephant x = (Elephant) a;
-						x.eat();
-					}
-					else if(a instanceof Hippo) {
-						Hippo x = (Hippo) a;
-						x.eat();
-					}
-					else if(a instanceof Lion) {
-						Lion x = (Lion) a;
-						x.eat();
-					}
-					else if(a instanceof Lynx) {
-						Lynx x = (Lynx) a;
-						x.eat();
-					}
-					else if(a instanceof Ray) {
-						Ray x = (Ray) a;
-						x.eat();
-					}
-					else if(a instanceof Rhino) {
-						Rhino x = (Rhino) a;
-						x.eat();
-					}
-					else if(a instanceof Shark) {
-						Shark x = (Shark) a;
-						x.eat();
-					}
-					else if(a instanceof Tiger) {
-						Tiger x = (Tiger) a;
-						x.eat();
-					}
-					else if(a instanceof Wolf) {
-						Wolf x = (Wolf) a;
-						x.eat();
-					}
+					a.eat();
 					break;
 				case EXERCISE:
 					System.out.println("Zookeeper tells " + a.getName() + " to exercise.");
@@ -132,6 +94,16 @@ public class ZooEmployee extends ZooKeeper
 	{
 		setTask("tuckin");
 		doForEveryAnimal(AnimalAction.TUCKIN);
+	}
+	
+	@Override
+	void arrive(int d) {
+		System.out.println("Zookeeper arrives at Zoo on Day " + d + ".");
+	}
+	@Override
+	void leave() {
+		System.out.println("Zookeeper heads home for the day.");
+		setTask("leave");
 	}
 
 }
