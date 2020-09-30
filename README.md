@@ -13,3 +13,7 @@
 - The Observer pattern is implemented in ZooAnnouncer.java, relying heavily on an example from baeldung.com
 - UML Diagrams are located in PDF form within \"UML Diagrams"
 - Issues include remembering and learning aspects of Java
+
+**Sources**
+-Course Material
+-[https://www.baeldung.com/java-observer-pattern] [Baeldung Observer Pattern]
