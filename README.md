@@ -16,6 +16,6 @@
 
 **Sources**
 
--Course Material
+Course Material
 
--[https://www.baeldung.com/java-observer-pattern] [Baeldung Observer Pattern]
+https://www.baeldung.com/java-observer-pattern
