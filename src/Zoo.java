@@ -42,7 +42,7 @@ public class Zoo
 		zoo.add(new Wolf("Wally"));
 		
 		//create zoo employees
-		Zookeeper zoolad = new Zookeeper(zoo);
+		ZooKeeper zoolad = new ZooKeeper(zoo);
 		ZooFoodServer foodslave = new ZooFoodServer();
 		ZooAnnouncer announcer = new ZooAnnouncer();
 		announcer.addObserved(zoolad);

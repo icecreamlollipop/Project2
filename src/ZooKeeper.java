@@ -1,14 +1,12 @@
-
 import java.util.ArrayList;
 
-
-public class Zookeeper extends ZooEmployee
+public class ZooKeeper extends ZooEmployee
 {	
 	private ArrayList<ZooAnimals.Animal> zoo;
 	
 	public static enum AnimalAction {AWAKEN, ROLLCALL, FEED, EXERCISE, TUCKIN};
 	
-	public Zookeeper(ArrayList<ZooAnimals.Animal> zoo)
+	public ZooKeeper(ArrayList<ZooAnimals.Animal> zoo)
 	{
 		this.zoo = zoo;
 	}
