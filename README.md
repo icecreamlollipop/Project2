@@ -1,6 +1,6 @@
 # ZooAnimals
  
-**Team Names: Daniel, Nicole**
+**Team Names: Nicole**
 
 **Requirements**
 - The driver class is Zoo.java
